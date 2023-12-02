@@ -4,6 +4,7 @@ Mis soluciones para el [AdventJs](https://adventjs.dev/es) desarrollado por Midu
 
 ## 2023
 
-| Días  |           Reto           | Estado |
-| :---: | :----------------------: | :----: |
-| Día 1 | ¡Primer regalo repetido! |   ✔    |
+| Días  |             Reto             | Estado |
+| :---: | :--------------------------: | :----: |
+| Día 1 |   ¡Primer regalo repetido!   |   ✅   |
+| Día 2 | Ponemos en marcha la fábrica |   ✅   |
