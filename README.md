@@ -8,3 +8,4 @@ Mis soluciones para el [AdventJs](https://adventjs.dev/es) desarrollado por Midu
 | :---: | :--------------------------: | :----: |
 | Día 1 |   ¡Primer regalo repetido!   |   ✅   |
 | Día 2 | Ponemos en marcha la fábrica |   ✅   |
+| Día 3 |       El elfo travieso       |   ✅   |
