@@ -13,23 +13,30 @@ function drawGift(size, symbol) {
   if (size === 1) {
     return "#\n"
   }
+
   let gift = ""
+
+  const trick = Math.max(0, size - 2)
+  const iterable = symbol.repeat(trick)
 
   gift += " ".repeat(size - 1) + "#".repeat(size) + "\n" // Primera linea
 
   // Cara superior y lateral superior
-  for (let i = 0; i < size - 2; i++) {
+  for (const i of [...iterable].keys()) {
     gift += " ".repeat(size - i - 2)
     gift += "#" + symbol.repeat(size - 2) + "#" + symbol.repeat(i) + "#\n"
   }
 
   // Linea del medio
-  gift += "#".repeat(size) + symbol.repeat(size - 2) + "#" + "\n"
+  gift += "#".repeat(size) + symbol.repeat(trick) + "#" + "\n"
 
   // Cara frontal y lateral inferior
-  for (let i = size - 2; i > 0; i--) {
-    gift += "#" + symbol.repeat(size - 2) + "#" + symbol.repeat(i - 1) + "#\n"
+  let helper = ""
+  for (const i of [...iterable].keys()) {
+    helper =
+      "#" + symbol.repeat(size - 2) + "#" + symbol.repeat(i) + "#\n" + helper
   }
+  gift += helper
 
   gift += "#".repeat(size) + "\n" // Última linea
 
