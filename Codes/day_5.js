@@ -22,7 +22,10 @@ function cyberReindeer(road, time) {
   const arrayRoad = [road]
   let index = road.indexOf("S")
 
-  for (let i = 0; i < time - 1; i++) {
+  const trick = Math.max(0, time - 1)
+  const iterable = "|".repeat(trick)
+
+  for (const i of [...iterable].keys()) {
     if (i === 4) {
       road = road.replaceAll("|", "*")
     }
