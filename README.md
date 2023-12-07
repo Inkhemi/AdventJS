@@ -12,3 +12,4 @@ Mis soluciones para el [AdventJs](https://adventjs.dev/es) desarrollado por Midu
 | Día 4 | Dale la vuelta a los paréntesis |   ✅   |
 | Día 5 |     El CyberTruck de Santa      |   ✅   |
 | Día 6 |       Los renos a prueba        |   ✅   |
+| Día 7 |         Las cajas en 3D         |   ✅   |
