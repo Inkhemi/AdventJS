@@ -14,7 +14,9 @@ function decode(message) {
   let result = ""
   let stack = []
 
-  for (let i = 0; i < message.length; i++) {
+  const iterable = "-".repeat(message.length)
+
+  for (const i of [...iterable].keys()) {
     const char = message[i]
 
     if (char === "(") {
@@ -30,6 +32,7 @@ function decode(message) {
 
   return result
 }
+
 const a = decode("hola (odnum)")
 console.log(a) // hola mundo
 
