@@ -16,6 +16,7 @@ function adjustLights(lights) {
 
   let verify = false
 
+  // Check sin cambiar el primer elemento
   for (const light of lights) {
     changes1 += verify == (light == init)
     verify = !verify
@@ -23,6 +24,7 @@ function adjustLights(lights) {
 
   verify = true
 
+  // Check cambiando el primer elemento
   for (const light of lights) {
     changes2 += verify == (light == init)
     verify = !verify
