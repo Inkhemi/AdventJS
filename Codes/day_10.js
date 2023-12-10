@@ -41,7 +41,7 @@ console.log(createChristmasTree("123", 4))
   2 3
  1 2 3
 1 2 3 1 
-    |
+   |
 */
 
 console.log(createChristmasTree("*@o", 3))
