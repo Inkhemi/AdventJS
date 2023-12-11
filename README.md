@@ -16,3 +16,4 @@ Mis soluciones para el [AdventJs](https://adventjs.dev/es) desarrollado por Midu
 | Día 8  |      Ordenando el almacén       |   ✅   |
 | Día 9  |        Alterna las luces        |   ✅   |
 | Día 10 | Crea tu propio árbol de navidad |   ✅   |
+| Día 11 |      Los elfos estudiosos       |   ✅   |
