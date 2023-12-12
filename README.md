@@ -17,3 +17,4 @@ Mis soluciones para el [AdventJs](https://adventjs.dev/es) desarrollado por Midu
 | Día 9  |        [Alterna las luces](https://adventjs.dev/es/challenges/2023/9)         |     🟢     |   ✅   |
 | Día 10 | [Crea tu propio árbol de navidad](https://adventjs.dev/es/challenges/2023/10) |     🟢     |   ✅   |
 | Día 11 |      [Los elfos estudiosos](https://adventjs.dev/es/challenges/2023/11)       |     🟡     |   ✅   |
+| Día 12 |      [¿Es una copia válida?](https://adventjs.dev/es/challenges/2023/12)      |     🟡     |   ✅   |
