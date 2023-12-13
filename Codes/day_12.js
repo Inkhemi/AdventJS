@@ -10,9 +10,9 @@ Necesitas detectar si una carta es una copia de otra.
 
 Existe una gran probabilidad de que un carácter se degrade en cada copia (¡no pasa siempre!).
  Y al ocurrir, la regla que sigue es:
- * Los caracteres de la A a la Z se degradan de mayúsculas a minúsculas (A-Z ⇒ a-z)
- * Las letras se degradan en una serie de caracteres en este orden: a-z ⇒ # ⇒ + ⇒ : ⇒ . ⇒
- * Los caracteres que no son letras (como los dígitos) no se degradan.
+ - Los caracteres de la A a la Z se degradan de mayúsculas a minúsculas (A-Z ⇒ a-z)
+ - Las letras se degradan en una serie de caracteres en este orden: a-z ⇒ # ⇒ + ⇒ : ⇒ . ⇒
+ - Los caracteres que no son letras (como los dígitos) no se degradan.
 
  Sabiendo esto y recibiendo la carta original y la copia,
   debes determinar si la copia es una copia de la original.
