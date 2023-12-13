@@ -19,25 +19,22 @@ Existe una gran probabilidad de que un carácter se degrade en cada copia (¡no 
 */
 
 function checkIsValidCopy(original, copy) {
-  let symbols = { "#": 1, "+": 2, ":": 3, ".": 4, " ": 5 }
+  const symbols = { "#": 1, "+": 2, ":": 3, ".": 4, " ": 5 }
 
   const iterable = ".".repeat(original.length)
 
   for (const i of [...iterable].keys()) {
     if (original[i] === copy[i] || original[i].toLowerCase() === copy[i]) {
       continue
-    }
-
-    if (
-      symbols[copy[i]] &&
-      original[i].toLowerCase != original[i].toUpperCase() &&
-      original[i] !== " "
-    ) {
+    } else if (symbols[copy[i]] && !symbols[original[i]]) {
+      continue
+    } else if (symbols[copy[i]] > symbols[original[i]]) {
       continue
     }
 
     return false
   }
+
   return true
 }
 
@@ -49,3 +46,7 @@ console.log(checkIsValidCopy("Santa Claus", "s#+:. c:. s"))
 // true
 console.log(checkIsValidCopy("Santa Claus", "s#+:.#c:. s"))
 // false (hay un # donde no debería)
+console.log(checkIsValidCopy("3 #egalos", "3 .+:# #:"))
+// true
+console.log(checkIsValidCopy("s+#:.#c:. s", "s#+:.#c:. s"))
+// false
