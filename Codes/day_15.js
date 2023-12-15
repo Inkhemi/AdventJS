@@ -20,10 +20,7 @@ Dados un almacén y los movimientos, debemos devolver el array con la posición 
 */
 
 function autonomousDrive(store, movements) {
-  let robotRow
-  let indexRobot
-  let initialRow
-  let initialIndex
+  let robotRow, indexRobot, initialRow, initialIndex
 
   const MOVE = {
     R: [0, 1],
@@ -32,9 +29,9 @@ function autonomousDrive(store, movements) {
     D: [1, 0],
   }
 
-  store.forEach((row) => {
+  store.forEach((row, rowIndex) => {
     if (row.includes("!")) {
-      robotRow = store.indexOf(row)
+      robotRow = rowIndex
       indexRobot = row.indexOf("!")
       initialRow = robotRow
       initialIndex = indexRobot
@@ -42,8 +39,9 @@ function autonomousDrive(store, movements) {
   })
 
   movements.forEach((movement) => {
-    let newRow = robotRow + MOVE[movement][0]
-    let newIndex = indexRobot + MOVE[movement][1]
+    const [rowMove, colMove] = MOVE[movement]
+    const newRow = robotRow + rowMove
+    const newIndex = indexRobot + colMove
 
     if (
       newRow >= 0 &&
@@ -56,19 +54,18 @@ function autonomousDrive(store, movements) {
       indexRobot = newIndex
     }
   })
-  let newStore = store
-  newStore[initialRow] = newStore[initialRow].split("")
-  newStore[initialRow][initialIndex] = "."
-  newStore[initialRow] = newStore[initialRow].join("")
-  newStore[robotRow] = newStore[robotRow].split("")
-  newStore[robotRow][indexRobot] = "!"
-  newStore[robotRow] = newStore[robotRow].join("")
 
-  return newStore
+  store[initialRow] = store[initialRow].split("")
+  store[initialRow][initialIndex] = "."
+  store[initialRow] = store[initialRow].join("")
+  store[robotRow] = store[robotRow].split("")
+  store[robotRow][indexRobot] = "!"
+  store[robotRow] = store[robotRow].join("")
+
+  return store
 }
 
 const store = ["..!....", "...*.*."]
-
 const movements = ["R", "R", "D", "L"]
 const result = autonomousDrive(store, movements)
 console.log(result)
