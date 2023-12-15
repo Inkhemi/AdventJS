@@ -15,19 +15,18 @@ function createChristmasTree(ornaments, height) {
   let tree = ""
 
   let ornamentIndex = 0
-  let cont = 1
+  let count = 1
 
   let iterable = ".".repeat(height)
 
   for (const i of [...iterable].keys()) {
     tree += " ".repeat(height - i - 1)
-    for (const j of [..." ".repeat(cont)].keys()) {
+    for (const _ of [..." ".repeat(count)].keys()) {
       tree += ornaments[ornamentIndex % ornaments.length] + " "
       ornamentIndex++
     }
-    tree = tree.slice(0, -1)
-    tree += "\n"
-    cont++
+    tree = tree.slice(0, -1) + "\n"
+    count++
   }
 
   tree += " ".repeat(height - 1) + "|\n"
