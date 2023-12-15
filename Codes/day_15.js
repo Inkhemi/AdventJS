@@ -24,8 +24,6 @@ function autonomousDrive(store, movements) {
   let indexRobot
   let initialRow
   let initialIndex
-  let newRow
-  let newIndex
 
   const MOVE = {
     R: [0, 1],
@@ -44,8 +42,8 @@ function autonomousDrive(store, movements) {
   })
 
   movements.forEach((movement) => {
-    newRow = robotRow + MOVE[movement][0]
-    newIndex = indexRobot + MOVE[movement][1]
+    let newRow = robotRow + MOVE[movement][0]
+    let newIndex = indexRobot + MOVE[movement][1]
 
     if (
       newRow >= 0 &&
