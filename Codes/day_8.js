@@ -26,9 +26,7 @@ function organizeGifts(gifts) {
   // Conseguir los números
   const numbers = gifts.split(/[^\d]+/).filter(Boolean)
 
-  // Truco para reducir complejidad
-  let trick = numbers.length
-  let iterableGifts = ".".repeat(trick)
+  let iterableGifts = ".".repeat(numbers.length)
 
   for (const gift of [...iterableGifts].keys()) {
     let giftNumber = parseInt(numbers[gift])
@@ -38,15 +36,13 @@ function organizeGifts(gifts) {
       if (giftNumber >= 50) {
         result += `[${giftChar}]`
         giftNumber -= 50
-        continue
       } else if (giftNumber >= 10) {
         result += `{${giftChar}}`
         giftNumber -= 10
-        continue
+      } else {
+        result += `(${giftChar.repeat(giftNumber)})`
+        giftNumber = 0
       }
-
-      result += `(${giftChar.repeat(giftNumber)})`
-      giftNumber = 0
     }
   }
 
