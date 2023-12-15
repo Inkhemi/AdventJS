@@ -12,16 +12,10 @@ Si no hay números repetidos, devuelve -1.
 
 // Solución
 function findFirstRepeated(gifts) {
-  let check = []
-
-  for (const ids of gifts) {
-    if (check.includes(ids)) {
-      return ids
-    }
-    check.push(ids)
-  }
-
-  return -1
+  const repeatedGifts = gifts.filter(
+    (gift, index) => gifts.indexOf(gift) !== index
+  )
+  return repeatedGifts.length > 0 ? repeatedGifts[0] : -1
 }
 
 // Tests
