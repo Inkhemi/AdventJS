@@ -21,57 +21,49 @@ Dados un almacén y los movimientos, debemos devolver el array con la posición 
 
 function autonomousDrive(store, movements) {
   let robotRow
-  let robotIndex
-  let initialIndex
+  let indexRobot
   let initialRow
+  let initialIndex
+  let newRow
+  let newIndex
 
-  for (const [index, row] of store.entries()) {
+  const MOVE = {
+    R: [0, 1],
+    L: [0, -1],
+    U: [-1, 0],
+    D: [1, 0],
+  }
+
+  store.forEach((row) => {
     if (row.includes("!")) {
-      robotRow = index
+      robotRow = store.indexOf(row)
+      indexRobot = row.indexOf("!")
       initialRow = robotRow
-      robotIndex = row.indexOf("!")
-      initialIndex = robotIndex
+      initialIndex = indexRobot
     }
-  }
+  })
 
-  for (const move of movements) {
-    switch (move) {
-      case "R":
-        if (
-          store[robotRow][robotIndex + 1] !== "*" &&
-          robotIndex < store[robotRow].length - 1
-        ) {
-          robotIndex += 1
-        }
-        break
-      case "L":
-        if (store[robotRow][robotIndex - 1] !== "*" && robotIndex > 0) {
-          robotIndex -= 1
-        }
-        break
-      case "U":
-        if (robotRow > 0) {
-          if (store[robotRow - 1][robotIndex] !== "*") {
-            robotRow -= 1
-          }
-        }
-        break
-      case "D":
-        if (robotRow < store.length - 1) {
-          if (store[robotRow + 1][robotIndex] !== "*") {
-            robotRow += 1
-          }
-        }
-        break
+  movements.forEach((movement) => {
+    newRow = robotRow + MOVE[movement][0]
+    newIndex = indexRobot + MOVE[movement][1]
+
+    if (
+      newRow >= 0 &&
+      newRow < store.length &&
+      newIndex >= 0 &&
+      newIndex < store[0].length &&
+      store[newRow][newIndex] !== "*"
+    ) {
+      robotRow = newRow
+      indexRobot = newIndex
     }
-  }
-
+  })
   let newStore = store
   newStore[initialRow] = newStore[initialRow].split("")
   newStore[initialRow][initialIndex] = "."
   newStore[initialRow] = newStore[initialRow].join("")
   newStore[robotRow] = newStore[robotRow].split("")
-  newStore[robotRow][robotIndex] = "!"
+  newStore[robotRow][indexRobot] = "!"
   newStore[robotRow] = newStore[robotRow].join("")
 
   return newStore
