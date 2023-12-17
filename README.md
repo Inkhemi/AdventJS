@@ -21,4 +21,5 @@ Mis soluciones para el [AdventJs](https://adventjs.dev/es) desarrollado por Midu
 | Día 13 |      [Calculando el tiempo](https://adventjs.dev/es/challenges/2023/13)       |     🟢     |
 | Día 14 |         [Evita la alarma](https://adventjs.dev/es/challenges/2023/14)         |     🟡     |
 | Día 15 |         [Robot autónomo](https://adventjs.dev/es/challenges/2023/15)          |     🟡     |
-| Día 16 |      [Despliegue en viernes](https://adventjs.dev/es/challenges/2023/1)       |     🟢     |
+| Día 16 |      [Despliegue en viernes](https://adventjs.dev/es/challenges/2023/16)      |     🟢     |
+| Día 17 |     [Optimizando el alquiler](https://adventjs.dev/es/challenges/2023/17)     |     🟢     |
