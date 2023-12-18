@@ -111,14 +111,8 @@ function drawClock(time) {
   const iterable = ".".repeat(7)
 
   for (const number of time) {
-    if (number === ":") {
-      for (const i of [...iterable].keys()) {
-        hour[i].push(...numbers[number][i], " ")
-      }
-    } else {
-      for (const i of [...iterable].keys()) {
-        hour[i].push(...numbers[number][i], " ")
-      }
+    for (const i of [...iterable].keys()) {
+      hour[i].push(...numbers[number][i], " ")
     }
   }
 
