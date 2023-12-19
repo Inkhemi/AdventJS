@@ -14,42 +14,22 @@ Si una celda contiene un juguete saboteado, debe permanecer igual.
 */
 
 function revealSabotage(store) {
-  for (const [index, row] of store.entries()) {
-    for (const [elementIndex, element] of row.entries()) {
-      if (element === "*") {
-        continue
+  store.forEach((row, rowIndex) => {
+    row.forEach((cell, cellIndex) => {
+      if (cell === "*") {
+      } else {
+        let count = 0
+        for (let i = rowIndex - 1; i <= rowIndex + 1; i++) {
+          for (let j = cellIndex - 1; j <= cellIndex + 1; j++) {
+            if (store[i] && store[i][j] === "*") {
+              count++
+            }
+          }
+        }
+        store[rowIndex][cellIndex] = count === 0 ? " " : count.toString()
       }
-      let count = 0
-
-      if (store[index - 1] && store[index - 1][elementIndex] === "*") {
-        count++
-      }
-      if (store[index + 1] && store[index + 1][elementIndex] === "*") {
-        count++
-      }
-      if (store[index][elementIndex - 1] === "*") {
-        count++
-      }
-      if (store[index][elementIndex + 1] === "*") {
-        count++
-      }
-      if (store[index - 1] && store[index - 1][elementIndex - 1] === "*") {
-        count++
-      }
-      if (store[index - 1] && store[index - 1][elementIndex + 1] === "*") {
-        count++
-      }
-      if (store[index + 1] && store[index + 1][elementIndex - 1] === "*") {
-        count++
-      }
-      if (store[index + 1] && store[index + 1][elementIndex + 1] === "*") {
-        count++
-      }
-      if (count !== 0) {
-        store[index][elementIndex] = count.toString()
-      }
-    }
-  }
+    })
+  })
 
   return store
 }
