@@ -17,17 +17,19 @@ function revealSabotage(store) {
   store.forEach((row, rowIndex) => {
     row.forEach((cell, cellIndex) => {
       if (cell === "*") {
-      } else {
-        let count = 0
-        for (let i = rowIndex - 1; i <= rowIndex + 1; i++) {
-          for (let j = cellIndex - 1; j <= cellIndex + 1; j++) {
-            if (store[i] && store[i][j] === "*") {
-              count++
-            }
+        return
+      }
+
+      let count = 0
+      for (let i = rowIndex - 1; i <= rowIndex + 1; i++) {
+        for (let j = cellIndex - 1; j <= cellIndex + 1; j++) {
+          if (store[i] && store[i][j] === "*") {
+            count++
           }
         }
-        store[rowIndex][cellIndex] = count === 0 ? " " : count.toString()
       }
+
+      store[rowIndex][cellIndex] = count === 0 ? " " : count.toString()
     })
   })
 
