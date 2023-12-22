@@ -27,3 +27,4 @@ Mis soluciones para el [AdventJs](https://adventjs.dev/es) desarrollado por Midu
 | Día 19 |      [Enfrenta el sabotaje](https://adventjs.dev/es/challenges/2023/19)       |     🟡     |
 | Día 20 |       [Distribuye el peso](https://adventjs.dev/es/challenges/2023/20)        |     🔴     |
 | Día 21 |         [Mensaje binario](https://adventjs.dev/es/challenges/2023/21)         |     🟡     |
+| Día 22 |    [Lenguaje de programación](https://adventjs.dev/es/challenges/2023/22)     |     🟢     |
