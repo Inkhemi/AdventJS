@@ -10,20 +10,16 @@ Tu tarea es ayudar a los elfos a encontrar todas las posibles secuencias de salt
 */
 
 function getStaircasePaths(steps, maxJump) {
+  if (steps === 0 || maxJump === 0) return [[]]
+
   const result = []
 
-  const getPaths = (steps, maxJump, path) => {
-    if (steps === 0) {
-      result.push(path)
-      return
-    }
-
-    for (let i = 1; i <= maxJump && i <= steps; i++) {
-      getPaths(steps - i, maxJump, [...path, i])
+  for (let i = 1; i <= maxJump && i <= steps; i++) {
+    const paths = getStaircasePaths(steps - i, maxJump)
+    for (const path of paths) {
+      result.push([i, ...path])
     }
   }
-
-  getPaths(steps, maxJump, [])
 
   return result
 }
