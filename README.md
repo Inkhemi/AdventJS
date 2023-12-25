@@ -30,3 +30,4 @@ Mis soluciones para el [AdventJs](https://adventjs.dev/es) desarrollado por Midu
 | Día 22 |    [Lenguaje de programación](https://adventjs.dev/es/challenges/2023/22)     |     🟢     |
 | Día 23 |      [La comida de Navidad](https://adventjs.dev/es/challenges/2023/23)       |     🟢     |
 | Día 24 |     [Brincos en la escalera](https://adventjs.dev/es/challenges/2023/24)      |     🟡     |
+| Día 25 |      [Calculando distancias](https://adventjs.dev/es/challenges/2023/24)      |     🟡     |
