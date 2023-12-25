@@ -36,7 +36,7 @@ function travelDistance(map) {
     })
   })
 
-  for (let i = 1; i < children.length; i++) {
+  for (const i in children) {
     const child = children[i]
     const distance =
       Math.abs(santaRow - child.row) + Math.abs(santaCol - child.col)
